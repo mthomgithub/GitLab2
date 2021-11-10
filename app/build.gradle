@@ -70,7 +70,7 @@ task deployReports (dependsOn: 'copyReports') {
     description  'Copies reports to the gh-pages branch in preparation for a future push to GitHub'
     doLast {
         def pagesDir1 = "$buildDir/gh-pages"
-        def grgit1 = git.open {
+        def grgit = git.open {
             dir = pagesDir1
         }
         
