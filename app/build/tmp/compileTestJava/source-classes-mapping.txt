@@ -1,2 +1,0 @@
-GitLab2/AppTest.java
- GitLab2.AppTest
