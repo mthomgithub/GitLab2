@@ -65,7 +65,7 @@ task copyReports (type: Copy, dependsOn: ['clonePages']) {
     into "$buildDir/gh-pages"
 }
 
-task deployReports (dependsOn: 'copyReports') {                     
+task deployReports (dependsOn: [ 'reports', 'copyReports') {                     
     group = "Reporting"
     description  'Copies reports to the gh-pages branch in preparation for a future push to GitHub'
     doLast {
