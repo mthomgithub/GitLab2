@@ -71,16 +71,16 @@ task deployReports (dependsOn: 'copyReports') {
     doLast {
         def pagesDir1 = "$buildDir/gh-pages/docs"
         def grgit1 = git.open {
-            dir = pagesDir + "/.git"
+            dir = pagesDir1 + "/.git"
         }
         
         def pagesDir2 = "$buildDir/gh-pages/reports"
         def grgit2 = git.open {
-            dir = pagesDir + "/.git"
+            dir = pagesDir2 + "/.git"
         }
         
-        grgit1.add (update: false, patterns: ['reports/'])
-        grgit1.add (update: true, patterns: ['reports/'])
+        grgit1.add (update: false, patterns: ['docs/'])
+        grgit1.add (update: true, patterns: ['docs/'])
         grgit2.add (update: false, patterns: ['reports/'])
         grgit2.add (update: true, patterns: ['reports/'])
        // grgit.commit {
