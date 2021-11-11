@@ -45,7 +45,7 @@ task clonePages() {
             delete pagesDir
         }
         def grgit = git.clone {
-            dir = pagesDir
+            dir = pagesDir 
             uri = 'file:' + thisRepo
             bare = false
             refToCheckout = 'gh-pages'
