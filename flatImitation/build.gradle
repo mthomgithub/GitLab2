@@ -36,7 +36,7 @@ task reports {
 }
 
 
-task clonePages() {                                             
+task clonePages {                                             
     doLast {
         mkdir 'build/gh-pages'
         def thisRepo = rootProject.projectDir.toString()
@@ -70,7 +70,7 @@ task deployReports (dependsOn: ['reports', 'copyReports']) {
     doLast {
         def pagesDir = "$buildDir/gh-pages"
         def grgit = git.open {
-            dir = pagesDir
+            dir = pagesDir + "/.git"
         }
         grgit.add (update: false, patterns: ['docs/'])
         grgit.add (update: true, patterns: ['docs/'])
