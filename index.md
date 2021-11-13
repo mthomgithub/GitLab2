@@ -3,4 +3,4 @@
 Michael Thompson
 
 * [Tests](./reports/tests/test/)
-* [JavaDoc](./docs/javadoc/)
+* [JavaDoc](./reports/javadoc/)
