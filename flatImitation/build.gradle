@@ -35,18 +35,30 @@ task reports {
 	dependsOn javadoc
 }
 
+task checkPaths {
+
+	mkdir 'build/gh-pages'
+    def thisRepo = rootProject.projectDir.toString()
+    def pagesDir = "$buildDir/gh-pages"
+    
+    System.out.print(thisRepo +"\n")
+    System.out.print(rootProject.toString() +"\n")
+    System.out.print(pagesDir)
+}
+
+
 
 task clonePages {                                             
     doLast {
         mkdir 'build/gh-pages'
-        def thisRepo = rootProject.projectDir.toString()
+        def thisRepo = "/home/cs_mthom040/GitLab2"
         def pagesDir = "$buildDir/gh-pages"
         project.delete {
             delete pagesDir
         }
         def grgit = git.clone {
             dir = pagesDir 
-            uri = 'file:' + thisRepo
+            uri = thisRepo
             bare = false
             refToCheckout = 'gh-pages'
         }
