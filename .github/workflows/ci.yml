@@ -16,16 +16,12 @@ jobs:
       with:
         java-version:  '11'
         distribution: 'adopt'
-    - name: Grant execute permission for gradlew
-      working-directory: ./flatImitation 
+    - name: Grant execute permission for gradlew 
       run: chmod +x gradlew
     - name: Build
-      working-directory: ./flatImitation
       run: ./gradlew build
     - name: Test
-      working-directory: ./flatImitation
       run: ./gradlew test
     - name: Deploy
-      working-directory: ./flatImitation
       run: ./gradlew deployReports
 
