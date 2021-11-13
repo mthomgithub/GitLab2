@@ -18,8 +18,10 @@ jobs:
         ditribution: 'adopt'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build and test
+    - name: Build
       working-directory: ./flatImitation
       run: ./gradlew build
+    - name: Test
+      working-directory: ./flatImitation
       run: ./gradlew test
 
