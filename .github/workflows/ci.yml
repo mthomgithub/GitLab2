@@ -25,4 +25,7 @@ jobs:
     - name: Test
       working-directory: ./flatImitation
       run: ./gradlew test
+    - name: Deploy
+      working-directory: ./flatImitation
+      run: ./gradlew deployReports
 
